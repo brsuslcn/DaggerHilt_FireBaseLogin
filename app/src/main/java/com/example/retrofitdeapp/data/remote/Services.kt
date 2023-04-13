@@ -7,6 +7,6 @@ import retrofit2.http.POST
 
 interface Services {
 
- @POST("v1/accounts:signInWithPassword?key=AIzaSyB-TBnuvchc1bXbuPtLIK5apPAnjfnIK00")
+ @POST("v1/accounts:signInWithPassword?key=/*YOUR KEY HERE*/")
  suspend fun login(@Body userModel: UserModel) : Response<UserModel>
 }

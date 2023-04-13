@@ -1,4 +1,4 @@
-package com.example.retrofitdeapp
+package com.example.retrofitdeapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,10 +47,10 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
             }
         }
 
-        loginViewModel.loginResult.observe(this, { result ->
+        loginViewModel.loginResult.observe(this) { result ->
             when (result) {
                 is Result.Loading -> {
-                    // İşlem yürütülüyor, bir şey yapmanıza gerek yok
+                    // Loading....
                 }
                 is Result.Success -> {
                     Toast.makeText(applicationContext, "Login Succesful!", Toast.LENGTH_SHORT).show()
@@ -59,9 +59,7 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
                     Toast.makeText(applicationContext, "Incorrect E-Mail or Password!", Toast.LENGTH_SHORT).show()
                 }
             }
-        })
-
-
+        }
 
 
     }
